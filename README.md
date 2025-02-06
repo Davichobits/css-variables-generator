@@ -1,6 +1,6 @@
 # CSS variables generator
 
-This tool is a chrome extension to generate CSS variables from a Frontend Mentor instructions.
+This tool is a chrome extension to generate CSS variables from the Frontend Mentor instructions.
 
 ## Usage
 

@@ -1,0 +1,10 @@
+{
+  "name": "CSS Variables Generator",
+  "description": "Tool to generate CSS variables from the Frontend Mentor instructions",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "css_var_generator.png"
+  }
+}
