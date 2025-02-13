@@ -23,29 +23,17 @@
 </head>
 <body>
     <h2>Generador de Variables CSS</h2>
-    <textarea id="input" placeholder="Ingresa los colores aquí..."></textarea>
-    <button onclick="generateCSS()">Generar CSS</button>
+    <textarea id="input" placeholder="Ingresa los colores aquí...
+
+Ejemplo:
+- White: hsl(0, 0%, 100%)
+- Grey 100: hsl(214, 17%, 92%)
+- Grey 200: hsl(0, 0%, 81%)
+"></textarea>
+    <button id="cssBtn">CSS</button>
+    <button id="tailwindBtn">Tailwind</button>
     <pre id="output"></pre>
 
-    <script>
-        function generateCSS() {
-            const input = document.getElementById('input').value;
-            const output = document.getElementById('output');
-            const lines = input.split('\n');
-            let cssVars = ':root {\n';
-
-            lines.forEach(line => {
-                const match = line.match(/-\s*(.+):\s*(hsl\(.+\))/i);
-                if (match) {
-                    let varName = match[1].trim().replace(/\s+/g, '-');
-                    let colorValue = match[2].trim();
-                    cssVars += `  --${varName}: ${colorValue};\n`;
-                }
-            });
-
-            cssVars += '}';
-            output.textContent = cssVars;
-        }
-    </script>
+    <script src="./main.js"></script>
 </body>
 </html>
