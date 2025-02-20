@@ -5,22 +5,38 @@ import * as vscode from 'vscode';
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
+  let disposable = vscode.commands.registerCommand('extension.transformToCSSVars', () => {
+    const editor = vscode.window.activeTextEditor;
+    if (!editor) {
+      return;
+    }
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "variables-generator" is now active!');
+    const selection = editor.selection;
+    const text = editor.document.getText(selection);
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('variables-generator.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from Variables Generator!');
-	});
+    const transformedText = transformToCSSVariables(text);
 
-	context.subscriptions.push(disposable);
+    editor.edit(editBuilder => {
+      editBuilder.replace(selection, transformedText);
+    });
+  });
+
+  context.subscriptions.push(disposable);
 }
 
-// This method is called when your extension is deactivated
+function transformToCSSVariables(text: string): string {
+  const lines = text.split('\n').map(line => line.trim()).filter(line => line);
+  const vars = lines.map(line => {
+    const match = line.match(/- (.+): (.+)/);
+    if (match) {
+      const name = match[1].replace(/\s+/g, '-'); // Reemplaza espacios por guiones
+      const value = match[2];
+      return `  --${name}: ${value};`;
+    }
+    return '';
+  });
+
+  return `:root {\n${vars.join('\n')}\n}`;
+}
+
 export function deactivate() {}

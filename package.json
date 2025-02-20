@@ -3,6 +3,8 @@
   "displayName": "Variables Generator",
   "description": "This is a tool to generate CSS variables from the Frontend Mentor Challenges instructions.",
   "version": "0.0.1",
+  "publisher":"CodingTube",
+  "license": "LICENSE.txt",
   "engines": {
     "vscode": "^1.97.0"
   },
@@ -14,15 +16,28 @@
   "contributes": {
     "commands": [
       {
-        "command": "variables-generator.helloWorld",
-        "title": "Hello World"
+        "command": "extension.transformToCSSVars",
+        "title": "Generate CSS Variables"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "extension.transformToCSSVars",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        }
+      ]
+    }
   },
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/Davichobits/css-variables-generator"
+},
   "scripts": {
     "vscode:prepublish": "npm run package",
     "compile": "npm run check-types && npm run lint && node esbuild.js",
-    "watch": "npm-run-all -p watch:*",
+    "watch": "esbuild src/extension.ts --bundle --outfile=out/extension.js --watch --external:vscode",
     "watch:esbuild": "node esbuild.js --watch",
     "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
     "package": "npm run check-types && npm run lint && node esbuild.js --production",
