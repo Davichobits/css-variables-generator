@@ -6,7 +6,7 @@ Generate CSS Variables from Frontend Mentor
 
 Convert Frontend Mentor style guide's instructions to CSS Variables
 
-![demo](./demo.gif)
+![demo](./variables_generator_demo.gif)
 
 ## Release Notes
 
