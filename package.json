@@ -2,7 +2,7 @@
   "name": "variables-generator",
   "displayName": "Variables Generator",
   "description": "This is a tool to generate CSS variables from the Frontend Mentor Challenges instructions.",
-  "version": "0.0.2",
+  "version": "1.0.3",
   "publisher":"CodingTube",
   "license": "LICENSE.txt",
   "engines": {
@@ -19,12 +19,21 @@
       {
         "command": "extension.transformToCSSVars",
         "title": "Generate CSS Variables"
+      },
+      {
+        "command": "extension.generateTailwindVars",
+        "title": "Generate Tailwind Variables"
       }
     ],
     "menus": {
       "editor/context": [
         {
           "command": "extension.transformToCSSVars",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        },
+        {
+          "command": "extension.generateTailwindVars",
           "when": "editorHasSelection",
           "group": "navigation"
         }
