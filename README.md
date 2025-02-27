@@ -14,9 +14,13 @@ Convert Frontend Mentor style guide's instructions to CSS Variables
 
 - Initial release of Variables Generator
 
-### 1.0.1
+### 1.0.2
 
 - fix: names with parentheses are generated correctly
+
+### 1.0.3
+
+- feature: add support for tailwind variables
 
 
 
