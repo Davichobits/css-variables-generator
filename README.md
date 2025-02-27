@@ -12,7 +12,11 @@ Convert Frontend Mentor style guide's instructions to CSS Variables
 
 ### 1.0.0
 
-Initial release of Variables Generator
+- Initial release of Variables Generator
+
+### 1.0.1
+
+- fix: names with parentheses are generated correctly
 
 
 
