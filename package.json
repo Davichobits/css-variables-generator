@@ -2,7 +2,7 @@
   "name": "variables-generator",
   "displayName": "Variables Generator",
   "description": "This is a tool to generate CSS variables from the Frontend Mentor Challenges instructions.",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "publisher":"CodingTube",
   "license": "LICENSE.txt",
   "engines": {

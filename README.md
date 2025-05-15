@@ -22,6 +22,10 @@ Convert Frontend Mentor style guide's instructions to CSS Variables
 
 - feature: add support for tailwind variables
 
+### 1.0.4
+
+- fix: Instructions without a hyphen at the beginning are generated correctly
+
 
 
 ## Author

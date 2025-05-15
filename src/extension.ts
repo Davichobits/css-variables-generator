@@ -41,7 +41,7 @@ export function activate(context: vscode.ExtensionContext) {
 function transformToCSSVariables(text: string): string {
   const lines = text.split('\n').map(line => line.trim()).filter(line => line);
   const vars = lines.map(line => {
-    const match = line.match(/- (.+): (.+)/);
+    const match = line.match(/^-?\s*(.+):\s*(.+)/);
     if (match) {
       let name = match[1];
       const value = match[2];
@@ -60,7 +60,7 @@ function transformToCSSVariables(text: string): string {
 function transformToTailwindVariables(text: string): string {
   const lines = text.split('\n').map(line => line.trim()).filter(line => line);
   const vars = lines.map(line => {
-    const match = line.match(/- (.+): (.+)/);
+    const match = line.match(/^-?\s*(.+):\s*(.+)/);
     if (match) {
       let name = match[1];
       const value = match[2];
