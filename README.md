@@ -38,3 +38,7 @@ David Ruiz - Frontend Developer
 - [codingtube.dev](https://codingtube.dev/)
 
 **Enjoy!**
+
+## GitAds Sponsored
+[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=davichobits/davichobits@github)](https://gitads.dev/v1/ad-track?source=davichobits/davichobits@github)
+
